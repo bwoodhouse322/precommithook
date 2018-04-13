@@ -9,16 +9,17 @@ metadata:
         ingress.kubernetes.io/secure-backends: 'true'
 spec:
     tls:
-        - 
+        -
             hosts:
                 - myurl-kube-env1.co.uk
     rules:
-        - 
+        -
             host: myurl-kube-env1.co.uk
             http:
                 paths:
-                    - 
+                    -
                         path: /
                         backend:
                             serviceName: test-service
                             servicePort: 80
+   

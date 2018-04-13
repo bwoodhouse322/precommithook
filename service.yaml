@@ -14,8 +14,4 @@ spec:
   selector:
     deployment: test-deployment
   sessionAffinity: None
-  type: ClusterIP
-status:
-  loadBalancer: {}
-
-
+  type: ClustsdferIP
