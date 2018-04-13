@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    deploytag: CW.18.03.27.1507
+    environment: iptcwidev7
+  name: ipt-prodcat-svc
+  namespace: iptcwidev7
+spec:
+  ports:
+  - name: https
+    port: 80
+    protocol: TCP
+    targetPort: 443
+  selector:
+    deployment: ipt-prodcat-svc-klb
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+
+

@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: assets-svc
+    namespace: iptcwidev7
+    labels:
+        ingress_toggle: ingress
+    annotations:
+        ingress.kubernetes.io/secure-backends: 'true'
+spec:
+    tls:
+        - 
+            hosts:
+                - assets-svc-iptcwidev7-kube1.service.np.iptho.co.uk
+    rules:
+        - 
+            host: assets-svc-iptcwidev7-kube1.service.np.iptho.co.uk
+            http:
+                paths:
+                    - 
+                        path: /
+                        backend:
+                            serviceName: ipt-assets-wui
+                            servicePort: 80
