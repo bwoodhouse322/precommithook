@@ -1,8 +1,8 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-    name: assets-svc
-    namespace: iptcwidev7
+    name: test-ingress
+    namespace: kube-env1
     labels:
         ingress_toggle: ingress
     annotations:
@@ -11,14 +11,14 @@ spec:
     tls:
         - 
             hosts:
-                - assets-svc-iptcwidev7-kube1.service.np.iptho.co.uk
+                - myurl-kube-env1.co.uk
     rules:
         - 
-            host: assets-svc-iptcwidev7-kube1.service.np.iptho.co.uk
+            host: myurl-kube-env1.co.uk
             http:
                 paths:
                     - 
                         path: /
                         backend:
-                            serviceName: ipt-assets-wui
+                            serviceName: test-service
                             servicePort: 80
